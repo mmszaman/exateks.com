@@ -1,0 +1,6 @@
+# robots.txt for Exateks
+
+User-agent: *
+Allow: /
+
+Sitemap: https://exateks.com/sitemap.xml
