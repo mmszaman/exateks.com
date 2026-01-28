@@ -1,5 +1,5 @@
-import { BaseHeader } from '@/components/layout/headers/base-header';
-import { BaseFooter } from '@/components/layout/footers/base-footer';
+import { FooterMain } from '@/components/footer';
+import { BaseHeader } from '@/components/header/base-header';
 
 interface BaseLayoutProps {
   children: React.ReactNode;
@@ -10,7 +10,7 @@ export function BaseLayout({ children }: BaseLayoutProps) {
     <div className="flex min-h-screen flex-col">
       <BaseHeader />
       <main className="flex-1">{children}</main>
-      <BaseFooter />
+      <FooterMain />
     </div>
   );
 }

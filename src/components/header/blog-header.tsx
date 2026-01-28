@@ -1,31 +1,34 @@
 'use client';
 
+import { Button } from '@/components/ui/button';
+import { Container } from '@/components/ui/container';
+import { blogNavItems } from '@/config/navigation';
+import { siteConfig } from '@/config/site';
+import { Menu, Search, X } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
-import { baseNavItems, ctaConfig } from '@/config/navigation';
-import { siteConfig } from '@/config/site';
-import { Container } from '@/components/ui/container';
-import { Button } from '@/components/ui/button';
 
-export function BaseHeader() {
+export function BlogHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="border-b bg-white">
+    <header className="sticky top-0 z-50 border-b bg-white/95 backdrop-blur-sm">
       <Container>
         <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary-600 to-secondary-600">
-              <span className="text-lg font-bold text-white">E</span>
-            </div>
-            <span className="text-lg font-bold text-gray-900">
-              {siteConfig.name}
-            </span>
+          <Link href="/blog" className="flex items-center space-x-3">
+            <Image
+              src={siteConfig.logo.header}
+              alt={siteConfig.name}
+              width={120}
+              height={30}
+              className="h-7 w-auto"
+            />
+            <span className="text-sm font-medium text-gray-500">Blog</span>
           </Link>
 
           <nav className="hidden items-center space-x-6 md:flex">
-            {baseNavItems.map((item) => (
+            {blogNavItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -34,10 +37,8 @@ export function BaseHeader() {
                 {item.label}
               </Link>
             ))}
-            <Button asChild size="sm">
-              <Link href={ctaConfig.base.primary.href}>
-                {ctaConfig.base.primary.text}
-              </Link>
+            <Button variant="ghost" size="icon">
+              <Search className="h-5 w-5" />
             </Button>
           </nav>
 
@@ -57,7 +58,7 @@ export function BaseHeader() {
 
         {mobileMenuOpen && (
           <nav className="flex flex-col space-y-3 border-t py-4 md:hidden">
-            {baseNavItems.map((item) => (
+            {blogNavItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -67,14 +68,6 @@ export function BaseHeader() {
                 {item.label}
               </Link>
             ))}
-            <Button asChild size="sm" className="w-full">
-              <Link
-                href={ctaConfig.base.primary.href}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {ctaConfig.base.primary.text}
-              </Link>
-            </Button>
           </nav>
         )}
       </Container>

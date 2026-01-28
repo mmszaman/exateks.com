@@ -5,10 +5,32 @@ export interface NavItem {
   badge?: string;
 }
 
+export interface SubMenuItem {
+  label: string;
+  href: string;
+  description?: string;
+}
+
+export interface MegaMenuSection {
+  title: string;
+  description?: string;
+  items: SubMenuItem[];
+}
+
+export interface MegaMenuItem {
+  label: string;
+  href?: string;
+  sections?: MegaMenuSection[];
+  viewAllLink?: {
+    label: string;
+    href: string;
+  };
+}
+
 export interface SocialLink {
   name: string;
   href: string;
-  icon: string;
+  icon: 'linkedin' | 'facebook' | 'instagram' | 'mail';
 }
 
 export interface FooterSection {
@@ -16,14 +38,166 @@ export interface FooterSection {
   links: NavItem[];
 }
 
-// ===== Landing Page Navigation =====
-export const landingNavItems: NavItem[] = [
-  { label: 'Home', href: '/' },
-  { label: 'Services', href: '/services' },
-  { label: 'Products', href: '/products', badge: 'New' },
-  { label: 'About', href: '/about' },
-  { label: 'Blog', href: '/blog' },
-  { label: 'Contact', href: '/contact' },
+// ===== Landing Page Navigation (Mega Menu) =====
+export const landingNavItems: MegaMenuItem[] = [
+  {
+    label: 'Services',
+    sections: [
+      {
+        title: 'AI Implementation',
+        description: 'Transform your business with AI',
+        items: [
+          {
+            label: 'AI Strategy & Consulting',
+            href: '/services/ai-strategy',
+            description: 'Strategic planning & expert guidance',
+          },
+          {
+            label: 'AI Integration',
+            href: '/services/ai-integration',
+            description: 'Seamless AI system integration',
+          },
+          {
+            label: 'AI Infrastructure',
+            href: '/services/ai-infrastructure',
+            description: 'Robust AI infrastructure setup',
+          },
+        ],
+      },
+      {
+        title: 'Automation',
+        description: 'Automate and scale efficiently',
+        items: [
+          {
+            label: 'Workflow Automation',
+            href: '/services/workflow-automation',
+            description: 'Streamline your processes',
+          },
+          {
+            label: 'Business Automation',
+            href: '/services/business-automation',
+            description: 'End-to-end business automation',
+          },
+        ],
+      },
+      {
+        title: 'Development',
+        description: 'Custom solutions for your business',
+        items: [
+          {
+            label: 'Custom AI Agents',
+            href: '/services/ai-agents',
+            description: 'Intelligent agents for your needs',
+          },
+          {
+            label: 'Business Solutions',
+            href: '/services/business-solutions',
+            description: 'Tailored business applications',
+          },
+          {
+            label: 'API & Integration',
+            href: '/services/api-integration',
+            description: 'Connect & extend your systems',
+          },
+        ],
+      },
+      {
+        title: 'Infrastructure',
+        description: 'Build scalable foundations',
+        items: [
+          {
+            label: 'Cloud Setup',
+            href: '/services/cloud-setup',
+            description: 'Cloud infrastructure deployment',
+          },
+          {
+            label: 'AI Infrastructure',
+            href: '/services/infrastructure',
+            description: 'Scalable AI infrastructure',
+          },
+          {
+            label: 'Scaling Support',
+            href: '/services/scaling',
+            description: 'Performance & growth support',
+          },
+        ],
+      },
+    ],
+    viewAllLink: {
+      label: 'View all services',
+      href: '/services',
+    },
+  },
+  {
+    label: 'Solutions',
+    sections: [
+      {
+        title: '',
+        items: [
+          {
+            label: 'Exa7i',
+            href: '/solutions/exa7i',
+            description: 'Enterprise AI & Automation Platform',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    label: 'Company',
+    sections: [
+      {
+        title: '',
+        items: [
+          {
+            label: 'About',
+            href: '/about',
+            description: 'Our story & mission',
+          },
+          {
+            label: 'Careers',
+            href: '/careers',
+            description: 'Join our team',
+          },
+          {
+            label: 'Brands',
+            href: '/brands',
+            description: 'Our brand portfolio',
+          },
+          {
+            label: 'Contact',
+            href: '/contact',
+            description: 'Get in touch with us',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    label: 'Resources',
+    sections: [
+      {
+        title: '',
+        items: [
+          {
+            label: 'Case Studies',
+            href: '/resources/case-studies',
+            description: 'Success stories & results',
+          },
+          {
+            label: 'Blog & Insights',
+            href: '/blog',
+            description: 'Latest news & articles',
+          },
+          {
+            label: 'FAQs',
+            href: '/resources/faqs',
+            description: 'Common questions answered',
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 // ===== Base Layout Navigation (Simple) =====
@@ -55,14 +229,14 @@ export const socialLinks: SocialLink[] = [
     icon: 'linkedin',
   },
   {
-    name: 'Twitter',
-    href: 'https://twitter.com/exateks',
-    icon: 'twitter',
+    name: 'Facebook',
+    href: 'https://facebook.com/exateks',
+    icon: 'facebook',
   },
   {
-    name: 'GitHub',
-    href: 'https://github.com/exateks',
-    icon: 'github',
+    name: 'Instagram',
+    href: 'https://instagram.com/exateks',
+    icon: 'instagram',
   },
   {
     name: 'Email',

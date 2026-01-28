@@ -48,3 +48,6 @@ nul
 con
 prn
 aux
+
+# local development only
+src/app/design-system/

@@ -1,12 +1,20 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import { Brain, Server, Rocket, Bot, Zap } from 'lucide-react';
-import { LandingLayout } from '@/layouts';
+import { Button } from '@/components/ui/button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 import { Container } from '@/components/ui/container';
 import { Section } from '@/components/ui/section';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+import { Heading } from '@/components/ui/typography/heading';
+import { Text } from '@/components/ui/typography/text';
 import { services } from '@/config/site';
+import { LandingLayout } from '@/layouts';
+import { Bot, Brain, Rocket, Server, Zap } from 'lucide-react';
+import type { Metadata } from 'next';
+import Link from 'next/link';
 
 const iconMap = {
   brain: Brain,
@@ -28,13 +36,14 @@ export default function ServicesPage() {
       <Section className="bg-gradient-to-br from-primary-50 to-secondary-50 pt-32">
         <Container>
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+            <Heading level="h1" className="text-4xl sm:text-5xl">
               Our Services
-            </h1>
-            <p className="mt-6 text-lg text-gray-600">
-              End-to-end AI solutions designed to transform your business operations
-              and drive sustainable growth for small and medium-sized businesses.
-            </p>
+            </Heading>
+            <Text size="lg" variant="muted" className="mt-6">
+              End-to-end AI solutions designed to transform your business
+              operations and drive sustainable growth for small and medium-sized
+              businesses.
+            </Text>
           </div>
         </Container>
       </Section>
@@ -56,21 +65,25 @@ export default function ServicesPage() {
                       <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-primary-600 text-white">
                         <Icon className="h-7 w-7" />
                       </div>
-                      <CardTitle className="text-3xl">{service.title}</CardTitle>
+                      <CardTitle className="text-3xl">
+                        {service.title}
+                      </CardTitle>
                       <CardDescription className="text-base">
                         {service.description}
                       </CardDescription>
                     </CardHeader>
 
                     <CardContent className="flex flex-col justify-center">
-                      <h3 className="mb-4 font-semibold text-gray-900">
+                      <Heading level="h3" className="mb-4 font-semibold">
                         Key Features:
-                      </h3>
+                      </Heading>
                       <ul className="space-y-3">
                         {service.features.map((feature, idx) => (
                           <li key={idx} className="flex items-start">
                             <div className="mr-3 mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-primary-600" />
-                            <span className="text-gray-700">{feature}</span>
+                            <Text as="span" className="text-gray-700">
+                              {feature}
+                            </Text>
                           </li>
                         ))}
                       </ul>
@@ -83,15 +96,16 @@ export default function ServicesPage() {
         </Container>
       </Section>
 
-      <Section className="bg-gradient-to-br from-primary-600 to-secondary-600">
+      <Section className="bg-gradient-to-br from-primary-600 via-secondary-600 to-highlight-700">
         <Container>
           <div className="mx-auto max-w-3xl text-center text-white">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            <Heading level="h2" className="text-3xl text-white sm:text-4xl">
               Ready to Get Started?
-            </h2>
-            <p className="mt-6 text-lg text-primary-100">
-              Let&apos;s discuss how our services can help transform your business
-            </p>
+            </Heading>
+            <Text size="lg" className="mt-6 text-primary-100">
+              Let&apos;s discuss how our services can help transform your
+              business
+            </Text>
             <div className="mt-10">
               <Button
                 asChild

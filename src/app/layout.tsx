@@ -1,16 +1,31 @@
-import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
-import './globals.css';
 import { siteConfig } from '@/config/site';
+import type { Metadata } from 'next';
+import { Inter, Outfit, Ubuntu } from 'next/font/google';
+import './globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+// Body font - Clean, highly readable
+const inter = Inter({
+  variable: '--font-inter',
   subsets: ['latin'],
+  display: 'block',
+  fallback: ['system-ui', 'arial'],
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+// Heading font - Modern geometric sans-serif
+const outfit = Outfit({
+  variable: '--font-outfit',
   subsets: ['latin'],
+  display: 'block',
+  fallback: ['system-ui', 'arial'],
+});
+
+// Accent font - Friendly, distinctive character
+const ubuntu = Ubuntu({
+  variable: '--font-ubuntu',
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '700'],
+  display: 'block',
+  fallback: ['system-ui', 'arial'],
 });
 
 export const metadata: Metadata = {
@@ -32,6 +47,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
+  icons: {
+    icon: '/exateks.ico',
+    shortcut: '/exateks.ico',
+    apple: '/exateks-icon.png',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -74,12 +94,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${inter.variable} ${outfit.variable} ${ubuntu.variable}`}
+      style={{
+        fontFamily: `${inter.style.fontFamily}, system-ui, sans-serif`,
+      }}
+    >
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

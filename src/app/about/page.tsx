@@ -6,6 +6,8 @@ import { Container } from '@/components/ui/container';
 import { Section } from '@/components/ui/section';
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Heading } from '@/components/ui/typography/heading';
+import { Text } from '@/components/ui/typography/text';
 
 export const metadata: Metadata = {
   title: 'About Us',
@@ -19,13 +21,13 @@ export default function AboutPage() {
       <Section className="bg-gradient-to-br from-primary-50 to-secondary-50 pt-32">
         <Container>
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+            <Heading level="h1" className="text-4xl sm:text-5xl">
               About Exateks
-            </h1>
-            <p className="mt-6 text-lg text-gray-600">
+            </Heading>
+            <Text size="lg" variant="muted" className="mt-6">
               We&apos;re on a mission to democratize AI technology and make it
               accessible to small and medium-sized businesses worldwide.
-            </p>
+            </Text>
           </div>
         </Container>
       </Section>
@@ -33,26 +35,26 @@ export default function AboutPage() {
       <Section className="bg-white">
         <Container>
           <div className="mx-auto max-w-3xl">
-            <h2 className="text-3xl font-bold text-gray-900">Our Story</h2>
-            <div className="mt-6 space-y-4 text-lg text-gray-600">
-              <p>
+            <Heading level="h2" className="text-3xl">Our Story</Heading>
+            <div className="mt-6 space-y-4">
+              <Text size="lg" variant="muted">
                 Exateks was founded with a clear vision: to empower small businesses
                 with the same AI capabilities that large enterprises enjoy. We believe
                 that every business, regardless of size, deserves access to cutting-edge
                 technology that can transform their operations and drive growth.
-              </p>
-              <p>
+              </Text>
+              <Text size="lg" variant="muted">
                 As an AI-first software company, we specialize in AI development, AI
                 infrastructure, AI implementation, agent development, and AI automation.
                 Our team of experts works tirelessly to deliver solutions that are not
                 only powerful but also accessible and easy to implement.
-              </p>
-              <p>
+              </Text>
+              <Text size="lg" variant="muted">
                 Our flagship product, Exa7i, represents our commitment to creating
                 practical, AI-powered tools that address real business challenges. It&apos;s
                 a compact, one-stop ERP solution designed specifically for SMBs, and
                 it&apos;s just the beginning of our product journey.
-              </p>
+              </Text>
             </div>
           </div>
         </Container>
@@ -94,61 +96,61 @@ export default function AboutPage() {
 
       <Section className="bg-white">
         <Container>
-          <h2 className="mb-12 text-center text-3xl font-bold text-gray-900">
+          <Heading level="h2" className="mb-12 text-center text-3xl">
             Our Values
-          </h2>
+          </Heading>
           <div className="grid gap-8 md:grid-cols-3">
             <div className="text-center">
               <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary-100 text-primary-600">
                 <Award className="h-8 w-8" />
               </div>
-              <h3 className="mt-6 text-xl font-semibold text-gray-900">
+              <Heading level="h3" className="mt-6 text-xl">
                 Excellence
-              </h3>
-              <p className="mt-2 text-gray-600">
+              </Heading>
+              <Text variant="muted" className="mt-2">
                 We strive for excellence in everything we do, delivering solutions
                 that exceed expectations.
-              </p>
+              </Text>
             </div>
 
             <div className="text-center">
               <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary-100 text-primary-600">
                 <Users className="h-8 w-8" />
               </div>
-              <h3 className="mt-6 text-xl font-semibold text-gray-900">
+              <Heading level="h3" className="mt-6 text-xl">
                 Customer-Centric
-              </h3>
-              <p className="mt-2 text-gray-600">
+              </Heading>
+              <Text variant="muted" className="mt-2">
                 Our clients&apos; success is our success. We put their needs at the
                 heart of everything we create.
-              </p>
+              </Text>
             </div>
 
             <div className="text-center">
               <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary-100 text-primary-600">
                 <Target className="h-8 w-8" />
               </div>
-              <h3 className="mt-6 text-xl font-semibold text-gray-900">
+              <Heading level="h3" className="mt-6 text-xl">
                 Innovation
-              </h3>
-              <p className="mt-2 text-gray-600">
+              </Heading>
+              <Text variant="muted" className="mt-2">
                 We embrace innovation and continuously explore new ways to solve
                 business challenges.
-              </p>
+              </Text>
             </div>
           </div>
         </Container>
       </Section>
 
-      <Section className="bg-gradient-to-br from-primary-600 to-secondary-600">
+      <Section className="bg-gradient-to-br from-primary-600 via-secondary-600 to-highlight-700">
         <Container>
           <div className="mx-auto max-w-3xl text-center text-white">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            <Heading level="h2" className="text-3xl sm:text-4xl text-white">
               Join Us on Our Journey
-            </h2>
-            <p className="mt-6 text-lg text-primary-100">
+            </Heading>
+            <Text size="lg" className="mt-6 text-primary-100">
               Let&apos;s work together to transform your business with AI
-            </p>
+            </Text>
             <div className="mt-10">
               <Button
                 asChild

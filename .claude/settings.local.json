@@ -10,7 +10,10 @@
       "Bash(pkill:*)",
       "Bash(npm run dev:*)",
       "Bash(powershell -Command \"if \\(Test-Path ''app''\\) { Move-Item -Path ''app'' -Destination ''src/app'' -Force }\")",
-      "Bash(powershell:*)"
+      "Bash(powershell:*)",
+      "Bash(del \"d:\\\\Projects\\\\exateks.com\\\\src\\\\components\\\\ui\\\\typography\\\\gradient-text.tsx\")",
+      "Bash(npm ls:*)",
+      "Bash(if exist .next rmdir /s /q .next)"
     ]
   }
 }

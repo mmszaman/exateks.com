@@ -5,6 +5,13 @@ export const siteConfig = {
     'AI-First Software Company providing AI development, AI infrastructure, and AI implementation services. Specializing in agent development and AI automation for SMBs.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://exateks.com',
   ogImage: '/images/og-image.jpg',
+  logo: {
+    header: '/exateks-logo.png',
+    footer: '/exa-logo.png',
+    icon: '/exateks-icon.png',
+    iconPadded: '/exateks-icon-padded.png',
+    favicon: '/exateks.ico',
+  },
   links: {
     twitter: 'https://twitter.com/exateks',
     linkedin: 'https://linkedin.com/company/exateks',

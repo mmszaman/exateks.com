@@ -1,5 +1,5 @@
-import { BlogHeader } from '@/components/layout/headers/blog-header';
-import { BlogFooter } from '@/components/layout/footers/blog-footer';
+import { FooterLite } from '@/components/footer';
+import { BlogHeader } from '@/components/header/blog-header';
 
 interface BlogLayoutProps {
   children: React.ReactNode;
@@ -10,7 +10,7 @@ export function BlogLayout({ children }: BlogLayoutProps) {
     <div className="flex min-h-screen flex-col">
       <BlogHeader />
       <main className="flex-1">{children}</main>
-      <BlogFooter />
+      <FooterLite />
     </div>
   );
 }

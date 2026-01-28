@@ -21,7 +21,6 @@ html {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-geist-sans);
 }
 
 @layer utilities {
@@ -30,12 +29,260 @@ body {
   }
 }
 
+/* ============================================================================
+   BRANDED GRADIENTS
+   Usage: Apply these classes directly to elements for consistent gradient styling
+   ============================================================================ */
+@layer components {
+  /* Brand Gradients - Vibrant, for CTAs and emphasis */
+  .gradient-purple-fuchsia {
+    @apply bg-gradient-to-r from-primary-500 to-secondary-600;
+  }
+  .gradient-fuchsia-purple {
+    @apply bg-gradient-to-r from-secondary-500 to-primary-600;
+  }
+  .gradient-violet-indigo {
+    @apply bg-gradient-to-br from-tertiary-500 to-highlight-600;
+  }
+  .gradient-indigo-violet {
+    @apply bg-gradient-to-r from-highlight-500 to-tertiary-600;
+  }
+  .gradient-fuchsia-indigo {
+    @apply bg-gradient-to-r from-secondary-500 to-highlight-600;
+  }
+  .gradient-purple-violet {
+    @apply bg-gradient-to-r from-primary-500 to-tertiary-600;
+  }
+
+  /* Subtle Background Gradients - Light, for sections and cards */
+  .gradient-light-brand {
+    @apply bg-gradient-to-br from-primary-50 via-white to-secondary-50;
+  }
+  .gradient-light-accent {
+    @apply bg-gradient-to-br from-tertiary-50 via-white to-highlight-50;
+  }
+  .gradient-light-cool {
+    @apply bg-gradient-to-br from-secondary-100 to-highlight-100;
+  }
+
+  /* Dark Gradients - Rich, for dark sections and footers */
+  .gradient-deep-purple-indigo {
+    @apply bg-gradient-to-br from-primary-900 to-highlight-900;
+  }
+  .gradient-deep-fuchsia-indigo {
+    @apply bg-gradient-to-br from-secondary-900 to-highlight-950;
+  }
+  .gradient-deep-purple-violet {
+    @apply bg-gradient-to-br from-primary-900 to-tertiary-950;
+  }
+
+  /* =========================================================================
+     GRADIENT TEXT - Elite Typography Effects
+     Usage: Apply to headings and text for stunning gradient text effects
+     ========================================================================= */
+
+  /* Base gradient text utility */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+  }
+
+  /* 1. Brand Signature - Primary hero gradient for main headlines */
+  .text-gradient-brand {
+    @apply bg-gradient-to-r from-primary-500 via-tertiary-500 to-secondary-600 bg-clip-text text-transparent;
+  }
+
+  /* 2. Royal Dusk - Elegant deep gradient for sophisticated sections */
+  .text-gradient-royal {
+    @apply bg-gradient-to-r from-highlight-500 via-tertiary-500 to-primary-600 bg-clip-text text-transparent;
+  }
+
+  /* 3. Vivid Bloom - Energetic fuchsia-purple for CTAs and emphasis */
+  .text-gradient-vivid {
+    @apply bg-gradient-to-r from-secondary-500 via-primary-500 to-tertiary-600 bg-clip-text text-transparent;
+  }
+
+  /* 4. Cosmic Twilight - Deep indigo to fuchsia for premium feel */
+  .text-gradient-cosmic {
+    @apply bg-gradient-to-r from-highlight-600 via-primary-500 to-secondary-500 bg-clip-text text-transparent;
+  }
+
+  /* 5. Soft Amethyst - Subtle purple tones for refined elegance */
+  .text-gradient-soft {
+    @apply bg-gradient-to-r from-tertiary-400 via-primary-400 to-tertiary-500 bg-clip-text text-transparent;
+  }
+
+  /* 6. Aurora - Ethereal multi-color flow, magical and sophisticated */
+  .text-gradient-aurora {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      to right,
+      theme('colors.highlight.500'),
+      theme('colors.tertiary.500'),
+      theme('colors.primary.500'),
+      theme('colors.secondary.500')
+    );
+  }
+
+  /* 7. Prism - Dynamic spectrum gradient, vibrant yet refined */
+  .text-gradient-prism {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      to right,
+      theme('colors.secondary.400'),
+      theme('colors.primary.500'),
+      theme('colors.tertiary.500'),
+      theme('colors.highlight.600')
+    );
+  }
+
+  /* 8. Nebula - Deep mysterious gradient, premium and luxurious */
+  .text-gradient-nebula {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      135deg,
+      theme('colors.tertiary.600'),
+      theme('colors.highlight.500'),
+      theme('colors.primary.500'),
+      theme('colors.secondary.600')
+    );
+  }
+
+  /* =========================================================================
+     ANIMATED GRADIENT TEXT - Elite Motion Effects
+     Usage: Apply for eye-catching animated gradient text headlines
+     ========================================================================= */
+
+  /* 1. Flow - Smooth horizontal flowing gradient animation */
+  .text-gradient-animate-flow {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      90deg,
+      theme('colors.primary.500'),
+      theme('colors.secondary.500'),
+      theme('colors.tertiary.500'),
+      theme('colors.highlight.500'),
+      theme('colors.primary.500')
+    );
+    background-size: 300% 100%;
+    animation: gradient-flow 6s ease-in-out infinite;
+  }
+
+  /* 2. Shimmer - Light shimmer effect moving across text */
+  .text-gradient-animate-shimmer {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      110deg,
+      theme('colors.primary.600') 0%,
+      theme('colors.primary.600') 40%,
+      theme('colors.secondary.400') 50%,
+      theme('colors.primary.600') 60%,
+      theme('colors.primary.600') 100%
+    );
+    background-size: 200% 100%;
+    animation: gradient-shimmer 3s linear infinite;
+  }
+
+  /* 3. Pulse - Pulsing glow gradient effect */
+  .text-gradient-animate-pulse {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      90deg,
+      theme('colors.highlight.500'),
+      theme('colors.tertiary.500'),
+      theme('colors.primary.500'),
+      theme('colors.secondary.500')
+    );
+    animation: gradient-pulse 3s ease-in-out infinite;
+  }
+
+  /* 4. Wave - Elegant wave-like color cycling */
+  .text-gradient-animate-wave {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      90deg,
+      theme('colors.secondary.500'),
+      theme('colors.primary.500'),
+      theme('colors.tertiary.500'),
+      theme('colors.highlight.500'),
+      theme('colors.tertiary.500'),
+      theme('colors.primary.500'),
+      theme('colors.secondary.500')
+    );
+    background-size: 400% 100%;
+    animation: gradient-wave 8s ease infinite;
+  }
+}
+
+/* Gradient Text Animations */
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient-shimmer {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: -100% 50%;
+  }
+}
+
+@keyframes gradient-pulse {
+  0%,
+  100% {
+    filter: brightness(1);
+    opacity: 1;
+  }
+  50% {
+    filter: brightness(1.2);
+    opacity: 0.9;
+  }
+}
+
+@keyframes gradient-wave {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Infinite scroll animation - Right to Left */
+@keyframes scroll-rtl {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 @layer base {
   * {
     @apply border-gray-200;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background font-sans text-foreground;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
   }
 }
 
@@ -49,7 +296,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-gray-400 rounded-full;
+  @apply rounded-full bg-gray-400;
 }
 
 ::-webkit-scrollbar-thumb:hover {

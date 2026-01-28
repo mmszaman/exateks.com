@@ -1,5 +1,5 @@
-import { InfoHeader } from '@/components/layout/headers/info-header';
-import { InfoFooter } from '@/components/layout/footers/info-footer';
+import { FooterLite } from '@/components/footer';
+import { InfoHeader } from '@/components/header/info-header';
 
 interface InfoLayoutProps {
   children: React.ReactNode;
@@ -10,7 +10,7 @@ export function InfoLayout({ children }: InfoLayoutProps) {
     <div className="flex min-h-screen flex-col bg-gray-50">
       <InfoHeader />
       <main className="flex-1">{children}</main>
-      <InfoFooter />
+      <FooterLite />
     </div>
   );
 }

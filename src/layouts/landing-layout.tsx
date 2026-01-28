@@ -1,5 +1,5 @@
-import { LandingHeader } from '@/components/layout/headers/landing-header';
-import { LandingFooter } from '@/components/layout/footers/landing-footer';
+import { FooterMain } from '@/components/footer';
+import { LandingHeader } from '@/components/header/landing-header';
 
 interface LandingLayoutProps {
   children: React.ReactNode;
@@ -10,7 +10,7 @@ export function LandingLayout({ children }: LandingLayoutProps) {
     <div className="flex min-h-screen flex-col">
       <LandingHeader />
       <main className="flex-1">{children}</main>
-      <LandingFooter />
+      <FooterMain />
     </div>
   );
 }

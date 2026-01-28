@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import colors from 'tailwindcss/colors';
 
 const config: Config = {
   content: [
@@ -7,47 +8,45 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     './src/layouts/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  safelist: ['font-heading', 'font-sans', 'font-accent'],
   theme: {
     extend: {
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
-        primary: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
-          950: '#082f49',
-        },
-        secondary: {
-          50: '#fdf4ff',
-          100: '#fae8ff',
-          200: '#f5d0fe',
-          300: '#f0abfc',
-          400: '#e879f9',
-          500: '#d946ef',
-          600: '#c026d3',
-          700: '#a21caf',
-          800: '#86198f',
-          900: '#701a75',
-          950: '#4a044e',
-        },
+        // Primary: Purple palette - main brand color
+        primary: colors.purple,
+        // Secondary: Fuchsia palette - vibrant accent
+        secondary: colors.fuchsia,
+        // Tertiary: Violet palette - soft accent
+        tertiary: colors.violet,
+        // Highlight: Indigo palette - deep accent
+        highlight: colors.indigo,
       },
       fontFamily: {
-        sans: ['var(--font-geist-sans)', 'ui-sans-serif', 'system-ui'],
-        mono: ['var(--font-geist-mono)', 'ui-monospace', 'SFMono-Regular'],
+        // Body text - Inter
+        sans: ['var(--font-inter)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        // Headings - Outfit
+        heading: [
+          'var(--font-outfit)',
+          'ui-sans-serif',
+          'system-ui',
+          'sans-serif',
+        ],
+        // Accent - Ubuntu
+        accent: [
+          'var(--font-ubuntu)',
+          'ui-sans-serif',
+          'system-ui',
+          'sans-serif',
+        ],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
         'slide-up': 'slideUp 0.5s ease-out',
         'slide-down': 'slideDown 0.5s ease-out',
         'scale-in': 'scaleIn 0.3s ease-out',
+        'scroll-rtl': 'scroll-rtl 30s linear infinite',
       },
       keyframes: {
         fadeIn: {
@@ -65,6 +64,10 @@ const config: Config = {
         scaleIn: {
           '0%': { transform: 'scale(0.9)', opacity: '0' },
           '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+        'scroll-rtl': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' },
         },
       },
     },
